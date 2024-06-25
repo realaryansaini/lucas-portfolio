@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
 :root{
     --outline-color:#8e65db;
     --btns-color:#7343D4;
@@ -27,7 +33,7 @@ body{
     margin-inline: auto;
 }
 
-img[src="./public/photo.jpeg"]{
+ .profile_photo img{
     width: min(450px , 80%);
     aspect-ratio: 1;
     object-fit: cover;
@@ -38,7 +44,7 @@ img[src="./public/photo.jpeg"]{
     max-height: 450px;
 }
 
-img[src="./public/photo.jpeg"]:hover{
+.profile_photo img:hover{
     outline: 3px solid var(--outline-color);
 }
 
@@ -195,6 +201,7 @@ img[src="./public/photo.jpeg"]:hover{
     display: flex;
     gap: 20px;
     flex-direction: column;
+    margin: 0 20px;
     
 }
 
@@ -229,30 +236,28 @@ img[src="./public/photo.jpeg"]:hover{
 }
 
 .recent_works_content .recent_works_card img{
-    border-radius: 1.5rem;
+    border-radius: clamp(16px , 4vw , 24px);
     background-color: var(--black-bg);
-    padding: 2rem;
+    padding: clamp(16px , 3vw , 32px);
     padding-bottom: 0;
-    /* min-width: 400px; */
-    margin: 0 20px;
-    max-width: calc(100% - 4rem - 40px);
+    width: 100%;
 }
 
 .recent_works_card section{
     position: absolute;
     background-image: linear-gradient(to right,var(--btns-color), var(--dark-btns-color) );
     bottom: 0;
-    width: calc(100% - 80px);
+    width: 100%;
     color: white;
-    /* font-weight: 700; */
     gap: calc(5px , 1vw , 10px);
 
     padding:clamp(10px,1vw, 20px) 20px;
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    border-radius: 20px;
+    /* margin: 20px; */
+    border-radius: clamp(12px , 3vw , 20px);
     display: none;
+    margin-bottom: 20px;
 }
 
 .recent_works_card section span:first-child{
@@ -355,7 +360,7 @@ img[src="./public/photo.jpeg"]:hover{
 }
 
 .skills img{
-    width: clamp(40px , 9vw , 80px);
+    width: clamp(100px , 29vw , 140px);
     background-color: var(--black-bg);
     
     padding: 30px;
@@ -462,13 +467,13 @@ svg:not(.nav svg){
         margin-top: 40px;
     }
 
-    img[src="./public/photo.jpeg"]{
+    .profile_photo img{
         transform: rotate(7deg);
         transition: transform .3s ease;
         
     }
     
-    img[src="./public/photo.jpeg"]:hover{
+    .profile_photo img:hover{
         transform: rotate(0deg);
     }
     .profile_photo{
@@ -481,7 +486,7 @@ svg:not(.nav svg){
     .recent_works_content{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 40px;
     }
 
 
@@ -489,12 +494,17 @@ svg:not(.nav svg){
     .experiances_educations{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        gap: 40px;
     }
 
 
 
     .hero{
         width: 80vw;
+    }
+
+    .contacts_content{
+        flex-direction: row;
+        gap: 40px;
     }
 }
