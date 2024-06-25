@@ -286,7 +286,7 @@ body{
     flex-direction: column;
     gap: 20px;
     color: white;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .edu_card{
@@ -295,7 +295,7 @@ body{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: clamp(5px, 1vw , 10px);
  
 }
 
@@ -404,7 +404,7 @@ body{
 }
 
 svg:not(.nav svg){
-    width: clamp(30px , 8vw , 40px);
+    width: clamp(50px , 8vw , 60px);
     padding: 10px;
     border-radius: 20px;
     background-image: linear-gradient(to right,var(--btns-color), var(--dark-btns-color) );
